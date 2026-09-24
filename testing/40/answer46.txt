@@ -1,0 +1,42 @@
+Dependency Graph
+R0:
+R1:
+R2:
+R3:R0,R1,R2
+R4:R3
+
+Rule Evaluation
+SCC: R2
+X(A,B,C,D,E) :- A(E),B(D),A(C),B(B),A(A).
+  a='a', b='b', c='a', d='b', e='a'
+1 passes: R2
+SCC: R1
+X(A,B,C,D,E) :- A(A),A(B),B(C),A(D),A(E).
+  a='a', b='a', c='b', d='a', e='a'
+1 passes: R1
+SCC: R0
+X(A,B,C,D,E) :- A(A),A(B),A(C),A(D),A(E).
+  a='a', b='a', c='a', d='a', e='a'
+1 passes: R0
+SCC: R3
+Y(E,D,C,B,A) :- X(A,B,C,D,E),A(B).
+  a='a', b='a', c='a', d='a', e='a'
+  a='a', b='a', c='b', d='a', e='a'
+  a='b', b='a', c='a', d='a', e='a'
+1 passes: R3
+SCC: R4
+Z(E,D,C,B,A) :- Y(A,B,C,D,E),B(D).
+1 passes: R4
+
+Query Evaluation
+X(A,B,C,D,E)? Yes(5)
+  A='a', B='a', C='a', D='a', E='a'
+  A='a', B='a', C='a', D='a', E='b'
+  A='a', B='a', C='b', D='a', E='a'
+  A='a', B='b', C='a', D='a', E='b'
+  A='a', B='b', C='a', D='b', E='a'
+Y(A,B,C,D,E)? Yes(3)
+  A='a', B='a', C='a', D='a', E='a'
+  A='a', B='a', C='b', D='a', E='a'
+  A='b', B='a', C='a', D='a', E='a'
+Z(A,B,C,D,E)? No

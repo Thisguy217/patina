@@ -1,0 +1,22 @@
+
+
+# dependency cycle with one rule
+
+
+Schemes:
+
+  a(x,y)
+
+Facts:
+
+  a('1','2').
+
+Rules:
+
+  a(x,y) :- a(y,x).
+
+Queries:
+
+  a(x,y)?
+
+

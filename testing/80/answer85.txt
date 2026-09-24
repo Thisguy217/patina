@@ -1,0 +1,151 @@
+Dependency Graph
+R0:R1
+R1:R0
+R2:R1
+R3:R4
+R4:R5,R6
+R5:R2,R3
+R6:R7
+R7:R8
+R8:R9
+R9:R10
+R10:R7
+
+Rule Evaluation
+SCC: R7,R8,R9,R10
+f(x) :- g(x).
+  z='7'
+g(y) :- h(y).
+  z='8'
+h(z) :- i(z).
+  z='9'
+i(z) :- f(z).
+  z='6'
+  z='7'
+f(x) :- g(x).
+  z='8'
+g(y) :- h(y).
+  z='9'
+h(z) :- i(z).
+  z='6'
+  z='7'
+i(z) :- f(z).
+  z='8'
+f(x) :- g(x).
+  z='9'
+g(y) :- h(y).
+  z='6'
+h(z) :- i(z).
+i(z) :- f(z).
+f(x) :- g(x).
+g(y) :- h(y).
+h(z) :- i(z).
+i(z) :- f(z).
+4 passes: R7,R8,R9,R10
+SCC: R6
+e(z) :- f(z).
+  z='6'
+  z='7'
+  z='8'
+  z='9'
+1 passes: R6
+SCC: R0,R1
+a(x) :- b(x).
+  x='2'
+b(y) :- a(y).
+  y='1'
+a(x) :- b(x).
+b(y) :- a(y).
+2 passes: R0,R1
+SCC: R2
+c(y) :- b(y).
+  z='1'
+  z='2'
+1 passes: R2
+SCC: R3,R4,R5
+c(x) :- d(x).
+  z='4'
+d(y) :- e(y).
+  z='5'
+  z='6'
+  z='7'
+  z='8'
+  z='9'
+e(z) :- c(z).
+  z='1'
+  z='2'
+  z='3'
+  z='4'
+c(x) :- d(x).
+  z='5'
+  z='6'
+  z='7'
+  z='8'
+  z='9'
+d(y) :- e(y).
+  z='1'
+  z='2'
+  z='3'
+e(z) :- c(z).
+c(x) :- d(x).
+d(y) :- e(y).
+e(z) :- c(z).
+3 passes: R3,R4,R5
+
+Query Evaluation
+a(x)? Yes(2)
+  x='1'
+  x='2'
+b(y)? Yes(2)
+  y='1'
+  y='2'
+c(z)? Yes(9)
+  z='1'
+  z='2'
+  z='3'
+  z='4'
+  z='5'
+  z='6'
+  z='7'
+  z='8'
+  z='9'
+d(z)? Yes(9)
+  z='1'
+  z='2'
+  z='3'
+  z='4'
+  z='5'
+  z='6'
+  z='7'
+  z='8'
+  z='9'
+e(z)? Yes(9)
+  z='1'
+  z='2'
+  z='3'
+  z='4'
+  z='5'
+  z='6'
+  z='7'
+  z='8'
+  z='9'
+f(z)? Yes(4)
+  z='6'
+  z='7'
+  z='8'
+  z='9'
+g(z)? Yes(4)
+  z='6'
+  z='7'
+  z='8'
+  z='9'
+h(z)? Yes(4)
+  z='6'
+  z='7'
+  z='8'
+  z='9'
+i(z)? Yes(4)
+  z='6'
+  z='7'
+  z='8'
+  z='9'

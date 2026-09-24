@@ -1,0 +1,68 @@
+Dependency Graph
+R0:R1,R2
+R1:R3,R4
+R2:R5,R6
+R3:R7
+R4:R7
+R5:R8
+R6:R8
+R7:
+R8:
+
+Rule Evaluation
+SCC: R8
+i(z) :- j(z).
+  z='4'
+1 passes: R8
+SCC: R7
+h(z) :- j(z).
+  z='4'
+1 passes: R7
+SCC: R6
+g(z) :- i(z).
+  z='4'
+1 passes: R6
+SCC: R5
+f(z) :- i(z).
+  z='4'
+1 passes: R5
+SCC: R4
+e(z) :- h(z).
+  z='4'
+1 passes: R4
+SCC: R3
+d(z) :- h(z).
+  z='4'
+1 passes: R3
+SCC: R2
+c(z) :- f(z),g(z).
+  z='4'
+1 passes: R2
+SCC: R1
+b(y) :- d(y),e(y).
+  y='4'
+1 passes: R1
+SCC: R0
+a(x) :- b(x),c(x).
+  x='4'
+1 passes: R0
+
+Query Evaluation
+a(x)? Yes(1)
+  x='4'
+b(y)? Yes(1)
+  y='4'
+c(z)? Yes(1)
+  z='4'
+d(z)? Yes(1)
+  z='4'
+e(z)? Yes(1)
+  z='4'
+f(z)? Yes(1)
+  z='4'
+g(z)? Yes(1)
+  z='4'
+h(z)? Yes(1)
+  z='4'
+i(z)? Yes(1)
+  z='4'

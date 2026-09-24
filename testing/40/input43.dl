@@ -1,0 +1,52 @@
+
+
+# branching dependencies, no cycles
+
+
+Schemes:
+
+  a(x)
+  b(y)
+  c(z)
+  d(z)
+  e(z)
+  f(z)
+  g(z)
+  h(z)
+  i(z)
+  j(z)
+
+Facts:
+
+  j('4').
+
+Rules:
+
+  a(x) :- b(x),c(x).  # branch to two rules
+
+  b(y) :- d(y),e(y).  # branch to two rules
+  c(z) :- f(z),g(z).  # branch to two rules
+
+  d(z) :- h(z).  # combine branches
+  e(z) :- h(z).
+
+  f(z) :- i(z).  # combine branches
+  g(z) :- i(z).
+
+  h(z) :- j(z).  # combine branches
+  i(z) :- j(z).
+
+
+Queries:
+
+  a(x)?
+  b(y)?
+  c(z)?
+  d(z)?
+  e(z)?
+  f(z)?
+  g(z)?
+  h(z)?
+  i(z)?
+
+

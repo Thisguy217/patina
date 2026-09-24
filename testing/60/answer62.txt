@@ -1,0 +1,21 @@
+Dependency Graph
+R0:R1
+R1:R0
+
+Rule Evaluation
+SCC: R0,R1
+a(x) :- b(x).
+  x='2'
+b(y) :- a(y).
+  y='1'
+a(x) :- b(x).
+b(y) :- a(y).
+2 passes: R0,R1
+
+Query Evaluation
+a(x)? Yes(2)
+  x='1'
+  x='2'
+b(y)? Yes(2)
+  y='1'
+  y='2'

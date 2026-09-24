@@ -1,0 +1,32 @@
+
+
+# forward rule order
+
+
+Schemes:
+
+  a(x)
+  b(y)
+  c(z)
+  d(w)
+
+Facts:
+
+  a('1').
+  a('2').
+  a('4').
+
+Rules:
+
+  b(y) :- a(y).
+  c(z) :- b(z).
+  d(w) :- c(w).
+
+Queries:
+
+  a(x)?
+  b(y)?
+  c(z)?
+  d(z)?
+
+

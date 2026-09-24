@@ -1,0 +1,32 @@
+
+
+# backward rule order
+
+
+Schemes:
+
+  a(x)
+  b(y)
+  c(z)
+  d(w)
+
+Facts:
+
+  a('1').
+  a('2').
+  a('4').
+
+Rules:
+
+  d(w) :- c(w).
+  c(z) :- b(z).
+  b(y) :- a(y).
+
+Queries:
+
+  a(x)?
+  b(y)?
+  c(z)?
+  d(z)?
+
+

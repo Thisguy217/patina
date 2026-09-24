@@ -1,0 +1,42 @@
+Dependency Graph
+R0:R1
+R1:R2
+R2:
+
+Rule Evaluation
+SCC: R2
+b(y) :- a(y).
+  y='1'
+  y='2'
+  y='4'
+1 passes: R2
+SCC: R1
+c(z) :- b(z).
+  z='1'
+  z='2'
+  z='4'
+1 passes: R1
+SCC: R0
+d(w) :- c(w).
+  w='1'
+  w='2'
+  w='4'
+1 passes: R0
+
+Query Evaluation
+a(x)? Yes(3)
+  x='1'
+  x='2'
+  x='4'
+b(y)? Yes(3)
+  y='1'
+  y='2'
+  y='4'
+c(z)? Yes(3)
+  z='1'
+  z='2'
+  z='4'
+d(z)? Yes(3)
+  z='1'
+  z='2'
+  z='4'

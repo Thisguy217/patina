@@ -1,0 +1,90 @@
+Dependency Graph
+R0:R1,R2
+R1:R3,R4,R5,R6
+R2:R7,R8,R9,R10
+R3:R11
+R4:R12
+R5:R13
+R6:R14
+R7:R11
+R8:R12
+R9:R13
+R10:R14
+R11:
+R12:
+R13:
+R14:
+
+Rule Evaluation
+SCC: R14
+h(z) :- j(z).
+  z='2'
+1 passes: R14
+SCC: R13
+g(z) :- j(z).
+  z='2'
+1 passes: R13
+SCC: R12
+f(z) :- j(z).
+  z='2'
+1 passes: R12
+SCC: R11
+e(z) :- j(z).
+  z='2'
+1 passes: R11
+SCC: R10
+d(z) :- h(z).
+  z='2'
+1 passes: R10
+SCC: R9
+d(z) :- g(z).
+1 passes: R9
+SCC: R8
+d(z) :- f(z).
+1 passes: R8
+SCC: R7
+d(z) :- e(z).
+1 passes: R7
+SCC: R6
+c(z) :- h(z).
+  z='2'
+1 passes: R6
+SCC: R5
+c(z) :- g(z).
+1 passes: R5
+SCC: R4
+c(z) :- f(z).
+1 passes: R4
+SCC: R3
+c(z) :- e(z).
+1 passes: R3
+SCC: R2
+b(y) :- d(y).
+  y='2'
+1 passes: R2
+SCC: R1
+b(y) :- c(y).
+1 passes: R1
+SCC: R0
+a(x) :- b(x).
+  x='2'
+1 passes: R0
+
+Query Evaluation
+a(x)? Yes(1)
+  x='2'
+b(y)? Yes(1)
+  y='2'
+c(z)? Yes(1)
+  z='2'
+d(z)? Yes(1)
+  z='2'
+e(z)? Yes(1)
+  z='2'
+f(z)? Yes(1)
+  z='2'
+g(z)? Yes(1)
+  z='2'
+h(z)? Yes(1)
+  z='2'
+i(z)? No

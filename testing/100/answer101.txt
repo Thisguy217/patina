@@ -1,0 +1,32 @@
+Dependency Graph
+R0:R0
+
+Rule Evaluation
+SCC: R0
+slide(b,c,d,w,x,y,z,a) :- slide(a,b,c,d,w,x,y,z).
+  A='b', B='c', C='d', D='w', W='x', X='y', Y='z', Z='a'
+slide(b,c,d,w,x,y,z,a) :- slide(a,b,c,d,w,x,y,z).
+  A='c', B='d', C='w', D='x', W='y', X='z', Y='a', Z='b'
+slide(b,c,d,w,x,y,z,a) :- slide(a,b,c,d,w,x,y,z).
+  A='d', B='w', C='x', D='y', W='z', X='a', Y='b', Z='c'
+slide(b,c,d,w,x,y,z,a) :- slide(a,b,c,d,w,x,y,z).
+  A='w', B='x', C='y', D='z', W='a', X='b', Y='c', Z='d'
+slide(b,c,d,w,x,y,z,a) :- slide(a,b,c,d,w,x,y,z).
+  A='x', B='y', C='z', D='a', W='b', X='c', Y='d', Z='w'
+slide(b,c,d,w,x,y,z,a) :- slide(a,b,c,d,w,x,y,z).
+  A='y', B='z', C='a', D='b', W='c', X='d', Y='w', Z='x'
+slide(b,c,d,w,x,y,z,a) :- slide(a,b,c,d,w,x,y,z).
+  A='z', B='a', C='b', D='c', W='d', X='w', Y='x', Z='y'
+slide(b,c,d,w,x,y,z,a) :- slide(a,b,c,d,w,x,y,z).
+8 passes: R0
+
+Query Evaluation
+slide(a,b,c,d,w,x,y,z)? Yes(8)
+  a='a', b='b', c='c', d='d', w='w', x='x', y='y', z='z'
+  a='b', b='c', c='d', d='w', w='x', x='y', y='z', z='a'
+  a='c', b='d', c='w', d='x', w='y', x='z', y='a', z='b'
+  a='d', b='w', c='x', d='y', w='z', x='a', y='b', z='c'
+  a='w', b='x', c='y', d='z', w='a', x='b', y='c', z='d'
+  a='x', b='y', c='z', d='a', w='b', x='c', y='d', z='w'
+  a='y', b='z', c='a', d='b', w='c', x='d', y='w', z='x'
+  a='z', b='a', c='b', d='c', w='d', x='w', y='x', z='y'

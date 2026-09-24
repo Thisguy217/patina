@@ -1,0 +1,67 @@
+Dependency Graph
+R0:R0,R1
+R1:R0,R1
+
+Rule Evaluation
+SCC: R0,R1
+permutations(b,a,c,d) :- permutations(a,b,c,d).
+  A='b', B='a', C='c', D='d'
+permutations(b,c,d,a) :- permutations(a,b,c,d).
+  A='a', B='c', C='d', D='b'
+  A='b', B='c', C='d', D='a'
+permutations(b,a,c,d) :- permutations(a,b,c,d).
+  A='c', B='a', C='d', D='b'
+  A='c', B='b', C='d', D='a'
+permutations(b,c,d,a) :- permutations(a,b,c,d).
+  A='a', B='d', C='b', D='c'
+  A='b', B='d', C='a', D='c'
+  A='c', B='d', C='a', D='b'
+  A='c', B='d', C='b', D='a'
+permutations(b,a,c,d) :- permutations(a,b,c,d).
+  A='d', B='a', C='b', D='c'
+  A='d', B='b', C='a', D='c'
+  A='d', B='c', C='a', D='b'
+  A='d', B='c', C='b', D='a'
+permutations(b,c,d,a) :- permutations(a,b,c,d).
+  A='c', B='a', C='b', D='d'
+  A='c', B='b', C='a', D='d'
+  A='d', B='a', C='c', D='b'
+  A='d', B='b', C='c', D='a'
+permutations(b,a,c,d) :- permutations(a,b,c,d).
+  A='a', B='c', C='b', D='d'
+  A='a', B='d', C='c', D='b'
+  A='b', B='c', C='a', D='d'
+  A='b', B='d', C='c', D='a'
+permutations(b,c,d,a) :- permutations(a,b,c,d).
+  A='a', B='b', C='d', D='c'
+  A='b', B='a', C='d', D='c'
+permutations(b,a,c,d) :- permutations(a,b,c,d).
+permutations(b,c,d,a) :- permutations(a,b,c,d).
+5 passes: R0,R1
+
+Query Evaluation
+permutations(a,b,c,d)? Yes(24)
+  a='a', b='b', c='c', d='d'
+  a='a', b='b', c='d', d='c'
+  a='a', b='c', c='b', d='d'
+  a='a', b='c', c='d', d='b'
+  a='a', b='d', c='b', d='c'
+  a='a', b='d', c='c', d='b'
+  a='b', b='a', c='c', d='d'
+  a='b', b='a', c='d', d='c'
+  a='b', b='c', c='a', d='d'
+  a='b', b='c', c='d', d='a'
+  a='b', b='d', c='a', d='c'
+  a='b', b='d', c='c', d='a'
+  a='c', b='a', c='b', d='d'
+  a='c', b='a', c='d', d='b'
+  a='c', b='b', c='a', d='d'
+  a='c', b='b', c='d', d='a'
+  a='c', b='d', c='a', d='b'
+  a='c', b='d', c='b', d='a'
+  a='d', b='a', c='b', d='c'
+  a='d', b='a', c='c', d='b'
+  a='d', b='b', c='a', d='c'
+  a='d', b='b', c='c', d='a'
+  a='d', b='c', c='a', d='b'
+  a='d', b='c', c='b', d='a'

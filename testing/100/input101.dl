@@ -1,0 +1,23 @@
+
+
+# requires 8 passes through the rules
+# produces all 8 rotations of 'abcdwxyz'
+
+
+Schemes:
+
+slide(A,B,C,D,W,X,Y,Z)
+
+Facts:
+
+slide('a','b','c','d','w','x','y','z').
+
+Rules:
+
+slide(b,c,d,w,x,y,z,a) :- slide(a,b,c,d,w,x,y,z).
+
+Queries:
+
+slide(a,b,c,d,w,x,y,z)?
+
+

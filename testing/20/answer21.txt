@@ -1,0 +1,11 @@
+Dependency Graph
+
+Rule Evaluation
+
+Query Evaluation
+a(x)? Yes(3)
+  x='1'
+  x='2'
+  x='4'
+b(y)? No
+c(z)? No

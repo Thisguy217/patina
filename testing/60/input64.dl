@@ -1,0 +1,38 @@
+
+
+# dependency cycle with five rules
+
+
+Schemes:
+
+  a(x)
+  b(y)
+  c(z)
+  d(z)
+  e(z)
+
+Facts:
+
+  a('1').
+  b('2').
+  c('3').
+  d('4').
+  e('5').
+
+Rules:
+
+  a(x) :- b(x).
+  b(y) :- c(y).
+  c(z) :- d(z).
+  d(z) :- e(z).
+  e(z) :- a(z).
+
+Queries:
+
+  a(x)?
+  b(y)?
+  c(z)?
+  d(z)?
+  e(z)?
+
+

@@ -1,0 +1,40 @@
+
+
+# requires 5 passes through the rules
+# produces all 256 combinations of the letters 'abcd'
+# join must be able to join relations with multiple common names
+
+
+Schemes:
+
+combinations(a,b,c,d)
+be(b,e)
+ce(c,e)
+bcd(b,c,d)
+ade(a,d,e)
+chars(all)
+shift(a,b,c,d)
+
+Facts:
+
+shift('a','b','c','d').
+
+Rules:
+
+chars(a) :- shift(a,b,c,d).
+be(b,e) :- chars(b), chars(e).
+ce(c,e) :- chars(c), chars(e).
+bcd(b,c,d) :- chars(b), chars(c), chars(d).
+ade(a,d,e) :- chars(a), chars(d), chars(e).
+combinations(a,b,c,d) :- be(b,d), ce(c,d), bcd(b,c,d), ade(a,b,c).
+shift(a,b,c,d) :- shift(d,a,b,c).
+
+Queries:
+
+shift(a,b,c,d)?
+chars(a)?
+be(b,e)?
+ade(a,d,e)?
+combinations(a,b,c,d)?
+
+

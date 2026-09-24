@@ -1,0 +1,26 @@
+
+
+# no rules, no dependencies
+
+
+Schemes:
+
+  a(x)
+  b(y)
+  c(z)
+
+Facts:
+
+  a('1').
+  a('2').
+  a('4').
+
+Rules:
+
+Queries:
+
+  a(x)?
+  b(y)?
+  c(z)?
+
+

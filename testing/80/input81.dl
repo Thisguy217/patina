@@ -1,0 +1,60 @@
+
+
+# multiple cycles
+
+
+Schemes:
+
+  a(x)
+  b(y)
+  c(z)
+  d(z)
+  e(z)
+  f(z)
+  g(z)
+  h(z)
+  i(z)
+
+Facts:
+
+  a('1').
+  b('2').
+  c('3').
+  d('4').
+  e('5').
+  f('6').
+  g('7').
+  h('8').
+  i('9').
+
+Rules:
+
+  a(x) :- b(x).  # 2-rule cycle
+  b(y) :- a(y).
+
+  b(y) :- c(y).  # 2-rule cycle depends on 3-rule cycle
+
+  c(x) :- d(x).  # 3-rule cycle
+  d(y) :- e(y).
+  e(z) :- c(z).
+
+  e(z) :- f(z).  # 3-rule cycle depends on 4-rule cycle
+
+  f(x) :- g(x).  # 4-rule cycle
+  g(y) :- h(y).
+  h(z) :- i(z).
+  i(z) :- f(z).
+
+Queries:
+
+  a(x)?
+  b(y)?
+  c(z)?
+  d(z)?
+  e(z)?
+  f(z)?
+  g(z)?
+  h(z)?
+  i(z)?
+
+

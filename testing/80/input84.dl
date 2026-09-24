@@ -1,0 +1,50 @@
+
+
+# overlapping cycles
+
+
+Schemes:
+
+  a(x)
+  b(y)
+  c(z)
+  d(z)
+  e(z)
+  f(z)
+  g(z)
+
+Facts:
+
+  a('1').
+  b('2').
+  c('3').
+  d('4').
+  e('5').
+  f('6').
+  g('7').
+
+Rules:
+
+  a(x) :- b(x).  # 2-rule cycle
+  b(y) :- a(y).
+
+  a(x) :- c(x).  # 3-rule cycle overlapping with 2-rule cycle
+  c(y) :- d(y).
+  d(z) :- a(z).
+
+  a(x) :- e(x).  # 4-rule cycle overlapping with 3-rule cycle
+  e(y) :- f(y).
+  f(z) :- g(z).
+  g(z) :- a(z).
+
+Queries:
+
+  a(x)?
+  b(y)?
+  c(z)?
+  d(z)?
+  e(z)?
+  f(z)?
+  g(z)?
+
+

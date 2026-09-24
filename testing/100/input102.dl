@@ -1,0 +1,24 @@
+
+
+# requires 5 passes through the rules
+# produces all 24 permutations of 'abcd'
+
+
+Schemes:
+
+permutations(A,B,C,D)
+
+Facts:
+
+permutations('a','b','c','d').
+
+Rules:
+
+permutations(b,a,c,d) :- permutations(a,b,c,d).
+permutations(b,c,d,a) :- permutations(a,b,c,d).
+
+Queries:
+
+permutations(a,b,c,d)?
+
+
